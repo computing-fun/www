@@ -1,4 +1,4 @@
-# Server for www.computingfun.org
+# Server for Computing Fun
 
 ## Licensing
 
@@ -8,4 +8,4 @@ All code in this repository is licensed under the MIT License. Feel free to use,
 - Media
 All files in the `/media` folder, including logos, images, and other assets, are **NOT** open source. These files are copyright Zachary Cohen, and all rights are reserved. Use of these files requires explicit written permission.
 
-For media usage inquiries, contact: github@computingfun.org.
+For media usage inquiries, contact: <github@computingfun.org>.
