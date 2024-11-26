@@ -1,5 +1,12 @@
 # Server for Computing Fun
 
+## Security
+
+Contact: mailto:security@computingfun.org
+Expires: 2026-01-01T05:00:00.000Z
+Preferred-Languages: en
+Canonical: <www.computingfun.org/.well-known/security.txt>
+
 ## Licensing
 
 - Code

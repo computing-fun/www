@@ -1,0 +1,8 @@
+services:
+  www:
+    image: rust:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    entrypoint: ["/bin/sh", "-c"]
+    command: "cargo install --git https://github.com/computing-fun/www www && www"
