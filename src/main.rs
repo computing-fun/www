@@ -48,6 +48,13 @@ async fn default_service() -> impl Responder {
     not_found()
 }
 
+#[derive(Template)]
+#[template(path = "construction.html")]
+struct Construction {}
+fn construction() -> impl Responder {
+    HttpResponse::ServiceUnavailable().body(Construction {}.render().unwrap())
+}
+
 const STATIC: include_dir::Dir = include_dir::include_dir!("$CARGO_MANIFEST_DIR/static");
 #[get("/src/{path}")]
 async fn src_file(path: Path<String>) -> impl Responder {
@@ -92,5 +99,6 @@ async fn security_txt() -> impl Responder {
 pub struct Index {}
 #[get("/")]
 async fn index() -> impl Responder {
-    Index {}.to_response()
+    //Index {}.to_response()
+    construction()
 }

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Building Fun{% endblock %}
+
+{% block head %}
+<style>
+    body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        background-color: #f7f9fc;
+        color: #333;
+        padding: 2rem;
+    }
+
+    .construction {
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+
+    .emoji {
+        font-size: 4rem;
+    }
+
+    .loader {
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid #3498db;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        animation: spin 2s linear infinite;
+        display: inline-block;
+        margin-top: 2rem;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="construction">
+    <span class="emoji">🚧</span><br>
+    <p>We're currently building something fun!</p>
+    <p>Check back soon for updates.</p>
+    <div class="loader"></div>
+</div>
+{% endblock %}
