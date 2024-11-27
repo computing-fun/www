@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Not Fun{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/src/404.css">
+{% endblock %}
+
+{% block content %}
+<h1>Lost on the internet</h1>
+<p>The page or file you are looking for doesn't exist or has been moved.</p>
+<button onclick="history.back()">Go back to where you came from</button>
+<p><a href="/">Go back to the homepage</a></p>
+{% endblock %}

@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+.content h1 {
+    font-size: 50px;
+}
+
+.content p {
+    font-size: 20px;
+    color: #333;
+}
+
+.content a,
+.content button {
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px;
+}
+
+.content a:hover,
+.content button:hover {
+    background-color: #0056b3;
+}
+
+.content button {
+    background-color: #6c757d;
+}
+
+.content button:hover {
+    background-color: #5a6268;
+}
+
+@keyframes flick {
+    from {
+        color: #ff6f61;
+    }
+
+    to {
+        color: #ff6e61ab;
+    }
+}
+
+h1 {
+    animation-duration: 50s;
+    animation-name: flick;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}

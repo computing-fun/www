@@ -4,5 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-tokio = { version = "1.41.1", features = ["full"] }
-warp = { version = "0.3.7", features = ["tls"] }
+actix-web = { version = "4.9.0", features = ["rustls-0_23"] }
+askama = "0.12.1"
+askama_actix = "0.14.0"
+include_dir = "0.7.4"
+mime_guess = "2.0.5"
+rustls = "0.23.18"
+rustls-pemfile = "2.2.0"

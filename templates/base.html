@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    {% block head %}{% endblock %}
+    <link rel="stylesheet" href="/src/sidebar.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <a class="icon" href="/"><img src="/media/cf-icon.svg" alt="Computing Fun" width="50px" height="50px" /></a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="https://github.com/computing-fun" target="_blank"><img src="/media/github-mark-white.svg"
+                        height="25px" />
+                    GitHub</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="icon-backing"></div>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+
+</html>
