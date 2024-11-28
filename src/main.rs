@@ -17,7 +17,7 @@ async fn main() -> Result<(), std::io::Error> {
             .default_service(actix_web::web::route().to(default_service))
     })
     .bind_rustls_0_23(
-        "127.0.0.1:443",
+        "0.0.0.0:443",
         rustls::ServerConfig::builder()
             .with_no_client_auth()
             .with_single_cert(
