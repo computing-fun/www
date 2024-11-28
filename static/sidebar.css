@@ -1,9 +1,9 @@
 .sidebar {
     height: 100vh;
-    width: 150px;
+    width: 300px;
     position: fixed;
     top: 0;
-    left: -120px;
+    left: -270px;
     background-color: #333;
     color: white;
     padding: 5px;
@@ -39,17 +39,14 @@
     display: block;
     height: 30px;
     line-height: 30px;
+    margin-left: -100px;
     padding: 10px;
     border-radius: 5px;
-    transition: margin-left 0.5s cubic-bezier(.18, .89, .32, 1.28);
+    transition: margin-left 0.5s cubic-bezier(.18, .89, .32, 1.28), background-color 1s cubic-bezier(.18, .89, .32, 1.28);
 }
 
 .sidebar ul li a:hover {
     background-color: #575757;
-}
-
-.sidebar:not(:hover) ul li a {
-    margin-left: -100px;
 }
 
 .sidebar:hover ul li a {
@@ -60,21 +57,21 @@
     max-height: 30px;
     float: inline-end;
     position: absolute;
-    left: 125px;
+    left: 275px;
     transition: left 0.3s cubic-bezier(.18, .89, .32, 1.28);
 }
 
 .sidebar:hover ul li a img {
-    left: 5px;
+    left: 10px;
 }
 
 .sidebar ul li:hover a img {
-    left: 125px;
+    left: 265px;
 }
 
 .sidebar .icon {
     position: absolute;
-    left: 125px;
+    left: 275px;
     width: 50px;
     height: 50px;
     background-color: #333;

@@ -2,10 +2,11 @@ use actix_web::{
     get, http::header::ContentType, web::Path, App, HttpResponse, HttpServer, Responder,
 };
 use askama::Template;
-use askama_actix::TemplateToResponse;
+//use askama_actix::TemplateToResponse;
 
 #[actix_web::main]
 async fn main() -> Result<(), std::io::Error> {
+    println!("Starting server");
     HttpServer::new(|| {
         App::new()
             .service(src_file)
