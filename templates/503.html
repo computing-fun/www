@@ -19,6 +19,38 @@
 
     .emoji {
         font-size: 4rem;
+        display: inline-block;
+        cursor: grab;
+    }
+
+    .emoji:hover {
+        animation: block 0.3s;
+    }
+
+    @keyframes block {
+        0% {
+            transform: scale(1);
+        }
+
+        20% {
+            transform: scale(1.1);
+        }
+
+        40% {
+            transform: scale(.7);
+        }
+
+        60% {
+            transform: scale(.7);
+        }
+
+        80% {
+            transform: scale(1.1);
+        }
+
+        100% {
+            transform: scale(1);
+        }
     }
 
     .loader {
