@@ -1,4 +1,4 @@
-use actix_web::{get, post, HttpRequest, Responder};
+use actix_web::{get, post, HttpRequest, HttpResponse, Responder};
 use askama::Template;
 use askama_actix::TemplateToResponse;
 
@@ -11,7 +11,7 @@ where
         InitError = (),
     >,
 {
-    app.service(wp).service(wp_post)
+    app.service(wp).service(wp_post).service(wp_wild)
 }
 
 #[derive(Template)]
@@ -34,9 +34,16 @@ async fn wp_post(req: HttpRequest, payload: actix_web::web::Payload) -> impl Res
         req,
         payload.to_bytes().await.unwrap_or_default().escape_ascii()
     );
-    tokio::time::sleep(tokio::time::Duration::from_secs(3)).await;
+    tokio::time::sleep(tokio::time::Duration::from_secs(2)).await;
     WP {
         error: String::from("Username and Password don't match"),
     }
     .to_response()
+}
+
+#[get("/wp-{param:.*}")]
+async fn wp_wild() -> impl Responder {
+    HttpResponse::Found()
+        .insert_header(("Location", "https://www.computingfun.org/wp"))
+        .finish()
 }
