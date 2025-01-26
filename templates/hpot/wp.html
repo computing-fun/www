@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Administrative Login{% endblock %}
+
+{% block head %}
+<style>
+    .content {
+        justify-items: center;
+        display: grid;
+    }
+
+    .helper-text {
+        margin: 15px;
+        font-size: smaller;
+    }
+
+    .error {
+        color: red;
+    }
+
+    .recovery {
+        color: cornflowerblue;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<h1>Administrative Login</h1>
+<form action="/wp" method="post">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" required><br><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+    <button type="submit" style="width: 100%;">Login</button>
+</form>
+<div class="error helper-text">{{error}}</div>
+<div class="recovery helper-text">For password recovery or other help with login, email administrative</div>
+{% endblock %}

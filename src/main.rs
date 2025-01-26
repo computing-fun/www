@@ -1,14 +1,19 @@
 mod files;
+mod hpot;
 mod pages;
 
 #[actix_web::main]
 async fn main() -> Result<(), std::io::Error> {
     println!("Starting server");
     actix_web::HttpServer::new(|| {
-        let mut app =
-            actix_web::App::new().default_service(actix_web::web::to(|| pages::not_found()));
+        let mut app = actix_web::App::new()
+            .default_service(actix_web::web::to(|| pages::not_found()))
+            .wrap(actix_web::middleware::NormalizePath::new(
+                actix_web::middleware::TrailingSlash::Trim,
+            ));
         app = files::service(app);
         app = pages::service(app);
+        app = hpot::service(app);
         app
     })
     .bind_rustls_0_23(

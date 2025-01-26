@@ -13,7 +13,9 @@ where
     app.service(favicon)
         .service(src)
         .service(media)
+        .service(robots_txt)
         .service(security_txt)
+        .service(security_txt_root)
 }
 
 #[actix_web::get("/src/{path}")]
@@ -38,6 +40,26 @@ async fn security_txt() -> impl Responder {
         .body(include_str!(concat!(
             env!("CARGO_MANIFEST_DIR"),
             "/security.txt"
+        )))
+}
+
+#[actix_web::get("/security.txt")]
+async fn security_txt_root() -> impl Responder {
+    actix_web::HttpResponse::PermanentRedirect()
+        .insert_header((
+            "Location",
+            "https://www.computingfun.org/.well-known/security.txt",
+        ))
+        .finish()
+}
+
+#[actix_web::get("/robots.txt")]
+async fn robots_txt() -> impl Responder {
+    actix_web::HttpResponse::Ok()
+        .content_type(actix_web::http::header::ContentType::plaintext())
+        .body(include_str!(concat!(
+            env!("CARGO_MANIFEST_DIR"),
+            "/robots.txt"
         )))
 }
 
