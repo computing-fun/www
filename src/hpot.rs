@@ -11,7 +11,10 @@ where
         InitError = (),
     >,
 {
-    app.service(wp).service(wp_post).service(wp_wild)
+    app.service(php500)
+        .service(wp)
+        .service(wp_post)
+        .service(wp_wild)
 }
 
 #[derive(Template)]
