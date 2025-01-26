@@ -17,7 +17,7 @@ where
 #[derive(Template)]
 #[template(path = "hpot/php500.html")]
 struct PHP500 {}
-#[get("/{path:.*\\.php}")]
+#[get("/{path:.*}.php")]
 async fn php500() -> impl Responder {
     PHP500 {}
         .customize()
