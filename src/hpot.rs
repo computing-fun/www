@@ -1,4 +1,4 @@
-use actix_web::{get, post, HttpRequest, HttpResponse, Responder};
+use actix_web::{get, http::StatusCode, post, HttpRequest, HttpResponse, Responder};
 use askama::Template;
 use askama_actix::TemplateToResponse;
 
@@ -12,6 +12,16 @@ where
     >,
 {
     app.service(wp).service(wp_post).service(wp_wild)
+}
+
+#[derive(Template)]
+#[template(path = "hpot/php500.html")]
+struct PHP500 {}
+#[get("/{path:.*\\.php}")]
+async fn php500() -> impl Responder {
+    PHP500 {}
+        .customize()
+        .with_status(StatusCode::INTERNAL_SERVER_ERROR)
 }
 
 #[derive(Template)]
